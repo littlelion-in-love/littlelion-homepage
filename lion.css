@@ -1,0 +1,46 @@
+/* Art-specific styles. Load after the page stylesheet. */
+.lion-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.lion-art {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  isolation: isolate;
+  pointer-events: none;
+  user-select: none;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+.lion-art .lion-image,
+.lion-art .lion-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.lion-art .lion-idle { opacity: 1; }
+.lion-art .lion-high-five { display: none; }
+.lion-art.is-rigged > .lion-image { visibility: hidden; }
+.lion-canvas { contain: layout style; }
+.lion-button:focus-visible { outline: 2px solid #aa683b; outline-offset: -30px; border-radius: 45%; }
+.lion-button .greeting-heart { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .lion-art, .lion-art * { animation: none !important; transition: none !important; }
+}
